@@ -1,9 +1,8 @@
-import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_clean_architecture/core/error/failure.dart';
 import 'package:flutter_clean_architecture/features/joke/domain/entities/joke_entity.dart';
 import 'package:flutter_clean_architecture/features/joke/domain/usecases/get_random_joke_usecase.dart';
-import 'package:meta/meta.dart';
 
 part 'joke_event.dart';
 part 'joke_state.dart';

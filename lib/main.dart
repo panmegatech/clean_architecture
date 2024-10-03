@@ -4,7 +4,6 @@ import 'package:flutter_clean_architecture/features/joke/domain/usecases/get_ran
 import 'package:flutter_clean_architecture/features/joke/presentation/bloc/joke/joke_bloc.dart';
 import 'package:flutter_clean_architecture/features/joke/presentation/joke_page.dart';
 import 'package:flutter_clean_architecture/setup_getit.dart';
-import 'package:get_it/get_it.dart';
 
 void main() {
   setup();
