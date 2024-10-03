@@ -9,7 +9,8 @@ void main() {
   setup();
   runApp(MultiBlocProvider(providers: [
     BlocProvider(
-      create: (context) => JokeBloc(getRandomJoke: getIt<GetRandomJoke>()),
+      create: (context) =>
+          JokeBloc(getRandomJokeUsecase: getIt<GetRandomJokeUsecase>()),
     )
   ], child: const MainApp()));
 }

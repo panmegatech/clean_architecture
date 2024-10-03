@@ -20,9 +20,9 @@ void setup() {
   }
 
   // ตรวจสอบว่ามี GetRandomJoke ลงทะเบียนแล้วหรือยัง
-  if (!getIt.isRegistered<GetRandomJoke>()) {
-    getIt.registerFactory<GetRandomJoke>(
-      () => GetRandomJoke(getIt<JokeRepository>()),
+  if (!getIt.isRegistered<GetRandomJokeUsecase>()) {
+    getIt.registerFactory<GetRandomJokeUsecase>(
+      () => GetRandomJokeUsecase(getIt<JokeRepository>()),
     );
   }
 }

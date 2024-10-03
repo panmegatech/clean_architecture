@@ -8,13 +8,13 @@ part 'joke_event.dart';
 part 'joke_state.dart';
 
 class JokeBloc extends Bloc<JokeEvent, JokeState> {
-  final GetRandomJoke getRandomJoke;
+  final GetRandomJokeUsecase getRandomJokeUsecase;
 
-  JokeBloc({required this.getRandomJoke}) : super(JokeInitial()) {
+  JokeBloc({required this.getRandomJokeUsecase}) : super(JokeInitial()) {
     on<GetJokeEvent>((event, emit) async {
       emit(JokeLoading());
 
-      final result = await getRandomJoke.execute();
+      final result = await getRandomJokeUsecase.execute();
 
       result.fold(
         (failure) => emit(JokeError(_mapFailureToMessage(failure))),
