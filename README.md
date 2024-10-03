@@ -9,6 +9,7 @@ This repository showcases a Flutter application that implements Clean Architectu
 - [Architecture Overview](#architecture-overview)
 - [Getting Started](#getting-started)
 - [Usage](#usage)
+- [Project Structure](#project-structure)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -77,41 +78,41 @@ This project is organized into a modular structure, following Clean Architecture
 
 ```
 lib/
-├── core/                             # Core functionalities and shared components
-│   ├── error/                        # Error handling components
-│   │   ├── exception.dart            # Custom exceptions
-│   │   └── failure.dart              # Failure representation
-│   └── utils/                        # Utility functions and helpers
+├── core/                                               # Core functionalities and shared components
+│   ├── error/                                          # Error handling components
+│   │   ├── exception.dart                              # Custom exceptions
+│   │   └── failure.dart                                # Failure representation
+│   └── utils/                                          # Utility functions and helpers
 │
-├── features/                         # Features of the application
-│   └── joke/                         # Joke feature module
-│       ├── data/                     # Data layer for the joke feature
-│       │   ├── datasources/          # Data sources for fetching data
-│       │   │   └── joke_remote_data_source.dart  # Remote data source for jokes
-│       │   ├── models/               # Data models
-│       │   │   └── joke_model.dart    # Model representation for jokes
-│       │   └── repositories/         # Repositories for data handling
-│       │       └── joke_repository_impl.dart  # Implementation of the joke repository
-│       ├── domain/                   # Domain layer for business logic
-│       │   ├── entities/             # Entities representing core business objects
-│       │   │   └── joke_entity.dart   # Joke entity representation
-│       │   ├── repositories/         # Interfaces for repositories
-│       │   │   └── joke_repository.dart  # Joke repository interface
-│       │   └── usecases/             # Use cases for handling business logic
-│       │       └── get_random_joke_usecase.dart  # Use case for getting a random joke
-│       └── presentation/              # Presentation layer for UI components
-│           ├── bloc/                 # BLoC components for state management
-│           │   ├── joke_bloc.dart     # BLoC for the joke feature
-│           │   ├── joke_event.dart    # Events for the joke BLoC
-│           │   └── joke_state.dart    # States for the joke BLoC
-│           ├── pages/                # UI pages
-│           │   └── joke_page.dart     # Page displaying the joke
-│           └── widgets/              # Custom widgets
-│               ├── custom_center.dart  # Custom center widget
-│               └── custom_text.dart    # Custom text widget
+├── features/                                           # Features of the application
+│   └── joke/                                           # Joke feature module
+│       ├── data/                                       # Data layer for the joke feature
+│       │   ├── datasources/                            # Data sources for fetching data
+│       │   │   └── joke_remote_data_source.dart        # Remote data source for jokes
+│       │   ├── models/                                 # Data models
+│       │   │   └── joke_model.dart                     # Model representation for jokes
+│       │   └── repositories/                           # Repositories for data handling
+│       │       └── joke_repository_impl.dart           # Implementation of the joke repository
+│       ├── domain/                                     # Domain layer for business logic
+│       │   ├── entities/                               # Entities representing core business objects
+│       │   │   └── joke_entity.dart                    # Joke entity representation
+│       │   ├── repositories/                           # Interfaces for repositories
+│       │   │   └── joke_repository.dart                # Joke repository interface
+│       │   └── usecases/                               # Use cases for handling business logic
+│       │       └── get_random_joke_usecase.dart        # Use case for getting a random joke
+│       └── presentation/                               # Presentation layer for UI components
+│           ├── bloc/                                   # BLoC components for state management
+│           │   ├── joke_bloc.dart                      # BLoC for the joke feature
+│           │   ├── joke_event.dart                     # Events for the joke BLoC
+│           │   └── joke_state.dart                     # States for the joke BLoC
+│           ├── pages/                                  # UI pages
+│           │   └── joke_page.dart                      # Page displaying the joke
+│           └── widgets/                                # Custom widgets
+│               ├── custom_center.dart                  # Custom center widget
+│               └── custom_text.dart                    # Custom text widget
 │
-├── main.dart                         # Main entry point of the application
-└── setup_getit.dart                  # Setup for dependency injection using GetIt
+├── main.dart                                           # Main entry point of the application
+└── setup_getit.dart                                    # Setup for dependency injection using GetIt
 ```
 
 ### Directory Descriptions
