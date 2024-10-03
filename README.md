@@ -70,6 +70,62 @@ To get started with this project, follow these steps:
 
 The application provides a simple interface to fetch random jokes using a REST API. Users can refresh to get a new joke, demonstrating the use of Clean Architecture in handling API calls and managing state.
 
+
+## Project Structure
+
+This project is organized into a modular structure, following Clean Architecture principles. Below is an overview of the directory structure and its components:
+
+```
+lib/
+├── core/                             # Core functionalities and shared components
+│   ├── error/                        # Error handling components
+│   │   ├── exception.dart            # Custom exceptions
+│   │   └── failure.dart              # Failure representation
+│   └── utils/                        # Utility functions and helpers
+│
+├── features/                         # Features of the application
+│   └── joke/                         # Joke feature module
+│       ├── data/                     # Data layer for the joke feature
+│       │   ├── datasources/          # Data sources for fetching data
+│       │   │   └── joke_remote_data_source.dart  # Remote data source for jokes
+│       │   ├── models/               # Data models
+│       │   │   └── joke_model.dart    # Model representation for jokes
+│       │   └── repositories/         # Repositories for data handling
+│       │       └── joke_repository_impl.dart  # Implementation of the joke repository
+│       ├── domain/                   # Domain layer for business logic
+│       │   ├── entities/             # Entities representing core business objects
+│       │   │   └── joke_entity.dart   # Joke entity representation
+│       │   ├── repositories/         # Interfaces for repositories
+│       │   │   └── joke_repository.dart  # Joke repository interface
+│       │   └── usecases/             # Use cases for handling business logic
+│       │       └── get_random_joke_usecase.dart  # Use case for getting a random joke
+│       └── presentation/              # Presentation layer for UI components
+│           ├── bloc/                 # BLoC components for state management
+│           │   ├── joke_bloc.dart     # BLoC for the joke feature
+│           │   ├── joke_event.dart    # Events for the joke BLoC
+│           │   └── joke_state.dart    # States for the joke BLoC
+│           ├── pages/                # UI pages
+│           │   └── joke_page.dart     # Page displaying the joke
+│           └── widgets/              # Custom widgets
+│               ├── custom_center.dart  # Custom center widget
+│               └── custom_text.dart    # Custom text widget
+│
+├── main.dart                         # Main entry point of the application
+└── setup_getit.dart                  # Setup for dependency injection using GetIt
+```
+
+### Directory Descriptions
+
+- **core/**: Contains core functionalities that are shared across the application, such as error handling and utility functions.
+- **features/**: Contains different features of the application, organized in a modular way. Each feature has its own data, domain, and presentation layers.
+  - **joke/**: The specific feature module for jokes, including its data sources, models, repositories, domain entities, and use cases.
+- **presentation/**: Contains the presentation layer, which handles UI components and state management using BLoC.
+- **main.dart**: The entry point of the Flutter application.
+- **setup_getit.dart**: Handles the setup of dependency injection using the GetIt package.
+
+This structure promotes a clear separation of concerns, making the application easier to maintain, test, and scale.
+
+
 ## Contributing
 
 Contributions are welcome! Please feel free to submit a pull request or open an issue for any suggestions or improvements.
